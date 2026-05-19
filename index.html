@@ -36,7 +36,7 @@
             position: relative;
         }
 
-        /* Abstract Background Golden Heart Art Structure (Mimicking Image) */
+        /* Abstract Background Golden Heart Art Structure */
         body::before {
             content: '';
             position: absolute;
@@ -56,7 +56,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 25px 4%;
+            padding: 20px 4%;
             background: linear-gradient(180deg, rgba(7, 6, 11, 0.95) 0%, rgba(7, 6, 11, 0.6) 100%);
             backdrop-filter: blur(20px);
             position: fixed;
@@ -101,9 +101,8 @@
         }
 
         .nav-links a::after {
-            content: ' Marie';
-            font-size: 0.6rem;
             content: ' ▾';
+            font-size: 0.6rem;
             color: var(--text-muted);
         }
 
@@ -111,23 +110,27 @@
             display: none;
         }
 
+        /* Center Logo Container */
         .nav-center {
             position: absolute;
             left: 50%;
             transform: translateX(-50%);
-            font-weight: 900;
-            letter-spacing: 4px;
-            font-size: 1.1rem;
-            text-align: center;
-            line-height: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        .nav-center span {
-            display: block;
-            font-size: 0.55rem;
-            letter-spacing: 2px;
-            color: var(--text-muted);
-            margin-top: 2px;
+        .main-logo {
+            height: 42px;
+            width: auto;
+            object-fit: contain;
+            /* Keeps logo looking sharp and adds a subtle professional premium depth */
+            filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.15));
+            transition: transform 0.3s ease;
+        }
+
+        .main-logo:hover {
+            transform: scale(1.02);
         }
 
         .nav-right {
@@ -263,6 +266,9 @@
             .nav-links, .profile-icon {
                 display: none;
             }
+            .main-logo {
+                height: 35px;
+            }
             footer {
                 flex-direction: column;
                 gap: 10px;
@@ -283,10 +289,11 @@
                 <a href="#" class="no-arrow">About</a>
             </div>
         </div>
+        
         <div class="nav-center">
-            VEXVISION
-            <span>SONG CONTEST</span>
+            <img src="logo.png" alt="Vexvision Song Contest" class="main-logo">
         </div>
+
         <div class="nav-right">
             <div class="profile-icon">👤</div>
             <a href="https://discord.gg/PE5ghAWX5t" target="_blank" class="btn-pill">Join Now!</a>
