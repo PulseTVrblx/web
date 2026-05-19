@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roblox Eurovision Song Contest 2026</title>
+    <style>
+        :root {
+            --primary-glow: #6c5ce7;
+            --secondary-glow: #a29bfe;
+            --bg-dark: #0f0c1b;
+            --card-bg: rgba(255, 255, 255, 0.05);
+            --text-light: #ffffff;
+            --text-muted: #b2bec3;
+            --roblox-gold: #f1c40f;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background: radial-gradient(circle at center, #1e1145 0%, var(--bg-dark) 100%);
+            color: var(--text-light);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Header & Navigation */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background: rgba(15, 12, 27, 0.8);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            background: linear-gradient(45deg, #ff7675, var(--secondary-glow));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--secondary-glow);
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 100px 20px;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            text-shadow: 0 0 20px var(--primary-glow);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+        }
+
+        .btn-join {
+            background: linear-gradient(45deg, var(--primary-glow), var(--secondary-glow));
+            color: white;
+            border: none;
+            padding: 15px 35px;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 0 15px var(--primary-glow);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn-join:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 25px var(--secondary-glow);
+        }
+
+        /* Main Grid Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px 60px 20px;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+        }
+
+        @media (max-width: 900px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Cards & Sections */
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--secondary-glow);
+            padding-left: 10px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 25px;
+            backdrop-filter: blur(5px);
+        }
+
+        /* Entries List */
+        .entries-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 20px;
+        }
+
+        .entry-card {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .entry-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--secondary-glow);
+        }
+
+        .entry-thumb {
+            width: 100%;
+            height: 140px;
+            background: #2d3436;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            position: relative;
+        }
+
+        .live-badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: #d63031;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .entry-info {
+            padding: 15px;
+        }
+
+        .entry-country {
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+
+        .entry-artist {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* Voting System Panel */
+        .voting-panel h3 {
+            margin-bottom: 15px;
+            color: var(--roblox-gold);
+        }
+
+        .voting-select {
+            width: 100%;
+            padding: 12px;
+            background: #1e1145;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            border-radius: 6px;
+            margin-bottom: 15px;
+            font-size: 1rem;
+        }
+
+        .btn-vote {
+            width: 100%;
+            padding: 12px;
+            background: var(--roblox-gold);
+            color: #000;
+            font-weight: bold;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: opacity 0.2s;
+        }
+
+        .btn-vote:hover {
+            opacity: 0.9;
+        }
+
+        /* Scoreboard */
+        .scoreboard-list {
+            margin-top: 15px;
+        }
+
+        .score-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .score-row:last-child {
+            border-bottom: none;
+        }
+
+        .rank {
+            font-weight: bold;
+            color: var(--secondary-glow);
+            margin-right: 10px;
+        }
+
+        /* Toast Notification */
+        #toast {
+            visibility: hidden;
+            min-width: 250px;
+            background-color: #2ecc71;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 16px;
+            position: fixed;
+            z-index: 1000;
+            left: 50%;
+            bottom: 30px;
+            transform: translateX(-50%);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        #toast.show {
+            visibility: visible;
+            animation: fadein 0.5s, fadeout 0.5s 2.5s;
+        }
+
+        @keyframes fadein {
+            from {bottom: 0; opacity: 0;}
+            to {bottom: 30px; opacity: 1;}
+        }
+
+        @keyframes fadeout {
+            from {bottom: 30px; opacity: 1;}
+            to {bottom: 0; opacity: 0;}
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">ROBLOX EUROVISION</div>
+        <nav>
+            <a href="#entries">Contestants</a>
+            <a href="#voting">Vote</a>
+            <a href="#results">Live Standings</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <span class="live-badge">Grand Final Live</span>
+        <h1>United By Music</h1>
+        <p>Experience the ultimate Roblox music event. Watch, cheer, and cast your official vote!</p>
+        <button class="btn-join" onclick="window.open('https://www.roblox.com', '_blank')">Join the Main Stage</button>
+    </section>
+
+    <main class="container">
+        
+        <section id="entries">
+            <h2 class="section-title">Participating Delegations</h2>
+            <div class="entries-grid" id="entriesGrid">
+                </div>
+        </section>
+
+        <aside style="display: flex; flex-direction: column; gap: 30px;">
+            
+            <section id="voting" class="card voting-panel">
+                <h3>Public Tele-Vote</h3>
+                <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 15px;">
+                    Support your favorite builder, animator, and performer. You can only vote once.
+                </p>
+                <select id="voteSelect" class="voting-select">
+                    <option value="" disabled selected>Choose a country...</option>
+                    </select>
+                <button class="btn-vote" onclick="submitVote()">Submit Official Vote</button>
+            </section>
+
+            <section id="results" class="card">
+                <h3>Live Scoreboard</h3>
+                <div class="scoreboard-list" id="scoreboardList">
+                    </div>
+            </section>
+
+        </aside>
+    </main>
+
+    <div id="toast">Vote submitted successfully!</div>
+
+    <script>
+        // Sample Contestant Data Architecture
+        const contestants = [
+            { id: "uk", country: "United Kingdom", artist: "BloxStreet Boys", song: "Neon Lights", flag: "🇬🇧", points: 142 },
+            { id: "se", country: "Sweden", artist: "ZaraBlox", song: "Crafting Hearts", flag: "🇸🇪", points: 189 },
+            { id: "it", country: "Italy", artist: "Noobskin", song: "Bella Ciao (Remix)", flag: "🇮🇹", points: 165 },
+            { id: "fr", country: "France", artist: "Le Builder", song: "Où est mon Block?", flag: "🇫🇷", points: 98 },
+            { id: "es", country: "Spain", artist: "FlamencoRobo", song: "Fiesta de Bloques", flag: "🇪🇸", points: 121 },
+            { id: "au", country: "Australia", artist: "DownUnderDev", song: "Lag Spike", flag: "🇦🇺", points: 154 }
+        ];
+
+        // Initialize the page components
+        function initContest() {
+            renderEntries();
+            renderDropdown();
+            renderScoreboard();
+        }
+
+        // Render standard grid elements
+        function renderEntries() {
+            const grid = document.getElementById('entriesGrid');
+            grid.innerHTML = contestants.map(c => `
+                <div class="entry-card">
+                    <div class="entry-thumb">
+                        ${c.flag}
+                    </div>
+                    <div class="entry-info">
+                        <div class="entry-country">${c.country}</div>
+                        <div class="entry-artist">${c.artist} - "<em>${c.song}</em>"</div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Populate Voting Menu
+        function renderDropdown() {
+            const select = document.getElementById('voteSelect');
+            contestants.forEach(c => {
+                const opt = document.createElement('option');
+                opt.value = c.id;
+                opt.textContent = `${c.flag} ${c.country}`;
+                select.appendChild(opt);
+            });
+        }
+
+        // Calculate and dynamically order the Scoreboard
+        function renderScoreboard() {
+            const list = document.getElementById('scoreboardList');
+            // Sort structural data descending by points values
+            const sorted = [...contestants].sort((a, b) => b.points - a.points);
+            
+            list.innerHTML = sorted.map((c, index) => `
+                <div class="score-row">
+                    <div>
+                        <span class="rank">#${index + 1}</span>
+                        <span>${c.flag} ${c.country}</span>
+                    </div>
+                    <div style="font-weight: bold;">${c.points} pts</div>
+                </div>
+            `).join('');
+        }
+
+        // Interactive voting execution logic
+        function submitVote() {
+            const select = document.getElementById('voteSelect');
+            const selectedId = select.value;
+
+            if (!selectedId) {
+                alert('Please pick a delegation to assign your points to.');
+                return;
+            }
+
+            // Find matching country within internal dataset state
+            const target = contestants.find(c => c.id === selectedId);
+            if (target) {
+                target.points += 12; // Award max traditional points
+                renderScoreboard();
+                showToast(`12 Points allocated to ${target.country}!`);
+                
+                // Disable option block safely after submission
+                select.disabled = true;
+                document.querySelector('.btn-vote').disabled = true;
+                document.querySelector('.btn-vote').style.opacity = '0.5';
+                document.querySelector('.btn-vote').textContent = 'Vote Recorded';
+            }
+        }
+
+        // UI Toast Alert Controller
+        function showToast(message) {
+            const toast = document.getElementById("toast");
+            toast.textContent = message;
+            toast.className = "show";
+            setTimeout(() => { toast.className = toast.className.replace("show", ""); }, 3000);
+        }
+
+        // Run application setup lifecycle on load
+        window.onload = initContest;
+    </script>
+</body>
+</html>
