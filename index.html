@@ -162,7 +162,7 @@
         /* ================= IMMERSIVE HERO OVERLAY ================= */
         
         .hero {
-            max-width: 750px;
+            max-width: 1200px;
             text-align: left;
         }
 
@@ -360,9 +360,11 @@
 </head>
 <body>
 
+    <!-- LIQUID LAYER STAGED CONTENT -->
     <img class="bg-ambient" src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=1600&auto=format&fit=crop" alt="Stage Atmosphere">
     <div class="bg-overlay"></div>
 
+    <!-- FLOATING APPLE TOPBAR -->
     <header>
         <img class="logo" src="vexvision-heart.png" alt="Logo" onclick="go('home')">
 
@@ -374,33 +376,37 @@
         <a class="btn" target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSflLaDmZ6r1yTRZvJeD4jku7faaEq97WzdnMs1GdurMEScjPQ/viewform?usp=send_form">Apply HoD</a>
     </header>
 
+    <!-- CONTENT PORTALS -->
     <section id="home" class="page active">
         <div class="hero">
             <h1><span class="pink">VEXVISION</span><br>Song Contest</h1>
             <p class="hero-desc">Congratulations to Bulgaria on achieving its first-ever Eurovision victory! Read below for production logs.</p>
             
             <div class="news-container">
+                <!-- SNEAK PEEK LOG 1 -->
                 <div class="news-card">
-                    <img src="https://th.bing.com/th/id/R.1b022723dc3ed3deae70b1c86203c9c4?rik=tI1vo6rdnBMHRw&pid=ImgRaw&r=0" alt="Launch Visual">
+                    <img src="https://images.unsplash.com/photo-1545232979-8bf34eb9757b?q=80&w=1400&auto=format&fit=crop" alt="Tech Infrastructure">
                     <div class="news-content">
-                        <div class="news-meta">Released • 1:55 PM</div>
-                        <div class="news-title">Website now launching</div>
-                        <div class="pill-trigger" onclick="openModal(1)">Read how it all went down</div>
+                        <div class="news-meta">Log • Server Config</div>
+                        <div class="news-title">Timezone calibration completed</div>
+                        <div class="pill-trigger" onclick="openModal(1)">View network timeline sync</div>
                     </div>
                 </div>
 
+                <!-- SNEAK PEEK LOG 2 -->
                 <div class="news-card">
-                    <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=80&w=1400&auto=format&fit=crop" alt="Production Setup">
+                    <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=1400&auto=format&fit=crop" alt="Production Office Setup">
                     <div class="news-content">
-                        <div class="news-meta">Update • 2026</div>
-                        <div class="news-title">Contest preparation begins</div>
-                        <div class="pill-trigger" onclick="openModal(2)">View stage build specifications</div>
+                        <div class="news-meta">Log • Venue Hospitality</div>
+                        <div class="news-title">Green room lounges curated</div>
+                        <div class="pill-trigger" onclick="openModal(2)">Check delegacy refreshments</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- ODDS PREDICTION LAYER -->
     <section id="odds" class="page">
         <h1 class="odds-title"><span class="pink">Odds</span> Hub</h1>
         <p class="odds-subtitle">Prediction core metrics system not active yet.</p>
@@ -418,6 +424,7 @@
         </div>
     </section>
 
+    <!-- SYSTEM LAYER INTERFACE SHEET -->
     <div class="modal" id="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal()">×</span>
@@ -425,27 +432,25 @@
         </div>
     </div>
 
+    <!-- CORE INTERACTION SYSTEMS ARCHITECTURE -->
     <script>
         const news = {
             1: `
-                <h2 style="font-size:1.8rem; font-weight:900; letter-spacing:-0.6px; margin-bottom:15px;"><span class="pink">Vexvision Song Contest</span><br>Website launch</h2>
+                <h2 style="font-size:1.8rem; font-weight:900; letter-spacing:-0.6px; margin-bottom:15px;"><span class="pink">System Sync</span><br>Timezone alignment</h2>
                 <p style="color:rgba(255,255,255,0.7); margin-top:10px; line-height:1.6; font-size:1rem;">
-                    We are excited to officially launch the first public version of the Vexvision Song Contest website.
+                    To ensure real-time voting nodes and media distribution run smoothly for the next season, the core datacenter is officially anchoring its clock configurations directly to Greenwich Mean Time (GMT).
                 </p>
                 <p style="color:rgba(255,255,255,0.7); margin-top:10px; line-height:1.6; font-size:1rem;">
-                    The website introduces the new identity, announcement hub, and community access portal.
-                </p>
-                <p style="color:rgba(255,255,255,0.7); margin-top:10px; line-height:1.6; font-size:1rem;">
-                    More updates coming soon.
+                    This allows flawless collaboration across the main European broadcaster feeds during peak show windows.
                 </p>
             `,
             2: `
-                <h2 style="font-size:1.8rem; font-weight:900; letter-spacing:-0.6px; margin-bottom:15px;">Contest preparation begins</h2>
+                <h2 style="font-size:1.8rem; font-weight:900; letter-spacing:-0.6px; margin-bottom:15px;">Hospitality Logistics</h2>
                 <p style="color:rgba(255,255,255,0.7); margin-top:10px; line-height:1.6; font-size:1rem;">
-                    Early development for VVSC 2026 has officially started.
+                    Our design crew has completed mapping out the artists' relaxation layouts. Alongside high-speed rendering rigs, backstage catering spaces are stocking an extensive premium tea menu to keep nerves settled.
                 </p>
                 <p style="color:rgba(255,255,255,0.7); margin-top:10px; line-height:1.6; font-size:1rem;">
-                    More systems including voting, staging, and country registration will be introduced soon.
+                    A subtle rainy-day atmospheric aesthetic will also run through the interior design motifs this season.
                 </p>
             `
         };
